@@ -23,6 +23,10 @@ public class ObSpringdatajpaApplication {
 
         // Recuperar todos los coches en la DB
         System.out.println(repository.findAll());
+
+        // NOTA: Esta DB está en memoria, en el archivo application.properties
+        // se puede agregar una configuración para que se guarde en disco
+        // con un programa como DBeaver se puede visualizar.
     }
 
 }
