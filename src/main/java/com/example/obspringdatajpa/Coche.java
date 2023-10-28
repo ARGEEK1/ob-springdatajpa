@@ -1,25 +1,31 @@
 package com.example.obspringdatajpa;
 
+import javax.persistence.*;
+
+@Entity
 public class Coche {
 
     // Atributos encapsulados (como norm general aplicaremos
     // encapsulación en todos los atributos de las clases
     // para que a través de metodos getter y setter, podamos controlar
     // como se modifican los valores de estos atributos).
+    @Id
+    @GeneratedValue(strategy = GenerationType.IDENTITY)
     private Long id;
+
     private String manufacturer;
     private String model;
-    private Integer year;
+    private Integer anio;
 
     // Constructores
     public Coche() {
     }
 
-    public Coche(Long id, String manufacturer, String model, Integer year) {
+    public Coche(Long id, String manufacturer, String model, Integer anio) {
         this.id = id;
         this.manufacturer = manufacturer;
         this.model = model;
-        this.year = year;
+        this.anio = anio;
     }
 
     // Getter y Setter
@@ -47,12 +53,12 @@ public class Coche {
         this.model = model;
     }
 
-    public Integer getYear() {
-        return year;
+    public Integer getAnio() {
+        return anio;
     }
 
-    public void setYear(Integer year) {
-        this.year = year;
+    public void setAnio(Integer anio) {
+        this.anio = anio;
     }
 
     // To String
@@ -62,7 +68,7 @@ public class Coche {
                 "id=" + id +
                 ", manufacturer='" + manufacturer + '\'' +
                 ", model='" + model + '\'' +
-                ", year=" + year +
+                ", anio=" + anio +
                 '}';
     }
 }
